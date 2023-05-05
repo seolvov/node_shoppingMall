@@ -4,6 +4,8 @@ import morgan from "morgan"
 
 //불러오기
 import productRoute from "./routes/product.js";
+//복습
+import orderRoute from "./routes/order.js"
 
 const app= express() //const 상수
 
@@ -13,6 +15,8 @@ app.use(morgan('dev')) //terminal 에 log 작성
 
 //routing
 app.use("/product", productRoute) //product 로 요청이 들어오면 이쪽으로 넘겨줄게
+//복습
+app.use("/order", orderRoute)
 
 //request response test
 app.get("/test", (req, res) => {
