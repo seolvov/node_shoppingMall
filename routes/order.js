@@ -11,8 +11,14 @@ router.get("/get", (req, res) => {
 })
 //생성
 router.post("/create", (req, res) => {
+    const userInput = {
+        id: req.body.orderId,
+        pw: req.body.orderPw
+    }
+
     res.json({
-        msg: "created a order"
+        msg: "created a order",
+        order: userInput
     })
 })
 //수정
