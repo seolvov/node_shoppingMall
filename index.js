@@ -2,10 +2,14 @@ import express from "express" //express 라이브러리 불러옴
 import cors from "cors"
 import morgan from "morgan"
 import bodyParser from "body-parser";
+import dotEnv from "dotenv"
 
 //불러오기
 import connectDB from "./config/database.js";
 import productRoute from "./routes/product.js";
+
+dotEnv.config()
+
 //복습
 import orderRoute from "./routes/order.js"
 
@@ -34,9 +38,9 @@ app.get("/test", (req, res) => {
 })
 
 
-const port= 8080
+const port= process.env.PORT || 9090
 
-app.listen(port, console.log("server started"))
+app.listen(port, console.log(`server started at ${port}`))//` 변수 추가하고 싶을 때 사용
 
 //코드 빌드 순서
 //js java python ruby swift ...
