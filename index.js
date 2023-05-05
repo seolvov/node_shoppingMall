@@ -1,6 +1,14 @@
 import express from "express" //express 라이브러리 불러옴
 const app= express() //const 상수
 
+//request response test
+app.get("/test", (req, res) => {
+    res.json({
+        msg: "test api"
+    })
+})
+
+
 const port= 8080
 
 app.listen(port, console.log("server started"))
