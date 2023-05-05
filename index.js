@@ -4,11 +4,15 @@ import morgan from "morgan"
 import bodyParser from "body-parser";
 
 //불러오기
+import connectDB from "./config/database.js";
 import productRoute from "./routes/product.js";
 //복습
 import orderRoute from "./routes/order.js"
 
 const app= express() //const 상수
+
+// DB 연결
+connectDB()
 
 // middleware 설정
 app.use(cors()) //외부 api 접근 허용 라이브러리
