@@ -1,5 +1,14 @@
 import express from "express" //express 라이브러리 불러옴
+import cors from "cors"
+import morgan from "morgan"
+
 const app= express() //const 상수
+
+// middleware 설정
+app.use(cors()) //외부 api 접근 허용 라이브러리
+app.use(morgan('dev')) //terminal 에 log 작성
+
+
 
 //request response test
 app.get("/test", (req, res) => {
