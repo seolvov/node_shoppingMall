@@ -6,7 +6,7 @@ const router = express.Router()
 //정보 가져오기
 router.get("/get", (req, res) => {
     res.json({
-        msg: "order get all"
+        msg: "order get all" 
     })
 })
 //생성
